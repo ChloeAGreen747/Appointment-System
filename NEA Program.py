@@ -1593,8 +1593,6 @@ class MainMenu():
         background.create_image(80,50, image=photo)
 
         background.create_text(500, 50, text='Displaying All Service Users', font=('comic sans ms',50), fill='violetred4')
-        #homebutton = Button(background, text='Home', font=('comic sans ms',12), fg='white',bg='darkseagreen3',relief=FLAT, command=self.MainMenu)
-        #homebutton.place(x=40,y=110)
 
         background.grid(row=0, column=0, sticky=N+S+E+W)
 
@@ -2383,9 +2381,6 @@ class MainMenu():
 
         background.create_text(530,50,text='Displaying All Appointments', font=('comic sans ms',50), fill='violetred4')
 
-        #homebutton = Button(background, text='Home', font=('comic sans ms',12), fg='white',bg='darkseagreen3',relief=FLAT, command=self.MainMenu)
-        #homebutton.place(x=40,y=110)
-
         background.grid(row=0, column=0, sticky=N+S+E+W)
 
         self.Day = StringVar()
@@ -2547,9 +2542,6 @@ class MainMenu():
         background.create_image(80,50, image=photo)
 
         background.create_text(500, 50, text='Displaying All Appointments', font=('comic sans ms',50), fill='violetred4')
-        #homebutton = Button(background, text='Home', font=('comic sans ms',12), fg='white',bg='darkseagreen3',relief=FLAT, command=self.MainMenu)
-        #homebutton.place(x=40,y=110)
-
         background.grid(row=0, column=0, sticky=N+S+E+W)
 
         selectbutton = Button(self.DisplayAllAppointment2Frame, text='Select Different Date', font=('Ariel',11), fg='black',bg='darkseagreen3',relief=FLAT, command=self.DisplayAllAppointments).place(x=20, y=115)
@@ -3017,9 +3009,6 @@ class MainMenu():
         self.selectbutton = Button(self.ExpensesFrame, text='Select', font=('comic sans ms',12), fg='white',bg='darkseagreen3',relief=FLAT, command=self.ExpensesForm3).place(x=500, y=200)
 
     def ExpensesForm3(self):
-        #remove label. round expenses to 2 decimal places. add new column to volunteer table. remove the apppointment once the expenses have been added to the table?
-        #remove the amount once the appointment has been updated to the expenses paid says yes.
-        
         miles = float(self.miles.get())
 
         expenses = 0
@@ -3135,32 +3124,6 @@ class MainMenu():
             else:
                 y_value = y_value2
 
-##        y_value = 160
-##        idpos = 1
-##        for i in range(0,maxid):
-##            y_value += 30
-##            date = information[i][3]
-##            time = information[i][4]
-##            cost = information[i][5]
-##            background.create_text(60,y_value,text = idpos, fill='black', font=('Ariel',10))
-##            background.create_text(600,y_value,text=date, fill='black', font=('Ariel',10))
-##            background.create_text(720,y_value,text=time, fill='black', font=('Ariel',10))
-##            background.create_text(850,y_value,text='£'+cost, fill='black', font=('Ariel',10))
-##            idpos += 1
-##            helpers = information[i][1]
-##            helperlist = helpers.split(', ')
-##            for name in helperlist:
-##                background.create_text(250,y_value,text = name, fill='black', font=('Ariel',10))
-##                y_value += 20
-##
-##        y_value = 160
-##        for i in range(0,maxid):
-##            y_value += 30
-##            susers = information[i][2]
-##            suserslist = susers.split(', ')
-##            for name in suserslist:
-##                background.create_text(440,y_value,text = name, fill='black', font=('Ariel',10))
-##                y_value += 20
 
     def DisplayLunchClubByDate(self):
         self.ClearWindow()
@@ -3246,25 +3209,6 @@ class MainMenu():
                 y_value = y_value3
             else:
                 y_value = y_value2
-            
-
-##        y_value = 160
-##        for i in range(0,len(information)):
-##            y_value += 30
-##            susers = information[i][2]
-##            suserslist = susers.split(', ')
-##            for name in suserslist:
-##                background.create_text(440,y_value,text = name, fill='black', font=('Ariel',10))
-##                y_value += 20
-
-
-        
-
-##        self.LunchClubID = StringVar()
-##        
-##        background.create_text(700,165, text='Select the Lunch Club ID you would like to view:', fill='violetred4', font=('ariel',11,'underline'))
-##        background.create_window(500,185,window = Spinbox(self.LunchClubsFrame, width = 4, from_=0, to=maxid, relief=FLAT, bg='grey88', textvariable = self.LunchClubID, command=self.DisplayLunchClub))
-##    
 
         
     def DisplayLunchClub(self):
@@ -3350,38 +3294,6 @@ class MainMenu():
         self.CostofClubEntry = Label(self.SearchLunchClubFrame, font=('ariel',10), bg='white', textvariable=self.cost_of_club).place(x=160,y=460)
 
         #LUNCH_CLUBS:  VOLUNTEERID, SERVICE_USERID, DATE_OF_CLUB, TIME_OF_CLUB, COST
-
-##        service_users = information[2].split(', ')
-##        requiretransport = []
-##        for i in range(0,len(service_users)-1):
-##            name = service_users[i].split(' ')
-##            cursor.execute('SELECT TRANSPORT_REQUIRED FROM SERVICE_USERS WHERE FIRST_NAME = ? AND LAST_NAME = ?', (str(name[0]), str(name[1])));
-##            requiretransport.append(cursor.fetchall()[0][0])
-##
-##        print(requiretransport)
-##            
-##        
-##        yvalue2 = yvalue + 50
-##        self.LastnameText = Label(self.SearchLunchClubFrame, textvariable=self.sunames, fg='black', bg='white', font=('ariel',10,'underline')).place(x=20,y=yvalue+30)
-##        self.RequireTransportText = Label(self.SearchLunchClubFrame, textvariable=self.require_transport, fg='black', bg='white', font=('ariel',10,'underline')).place(x=280,y=yvalue+30)
-##        self.AmountText = Label(self.SearchLunchClubFrame, textvariable=self.cost, fg='black', bg='white', font=('ariel',10,'underline')).place(x=480,y=yvalue+30)
-##        for i in range(0,len(service_users)-1):
-##            service_username = service_users[i]
-##            self.SUFirstname = Label(self.SearchLunchClubFrame, font=('ariel',10), bg='white', text=service_username).place(x=20,y=yvalue2)
-##            self.RequireTransport = Label(self.SearchLunchClubFrame, font=('ariel',10), bg='white', text=requiretransport[i]).place(x=280,y=yvalue2)
-##            if requiretransport[i] == 'Yes':
-##                amount = '10'
-##            else:
-##                amount = '6'
-##            self.amount = Label(self.SearchLunchClubFrame, font=('ariel',10), bg='white', text=amount).place(x=480,y=yvalue2)
-##            yvalue += 20
-##            i += 1
-
-        
-
-
-
-
 
     def AddLunchClub(self):
         self.ClearWindow()
